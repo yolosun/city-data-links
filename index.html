@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>城市数据分析网站导航</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+        .category {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .site-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+        .site-item {
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        .site-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .site-item h3 {
+            margin: 0 0 10px 0;
+            color: #3498db;
+        }
+        .site-item p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+        }
+        a {
+            text-decoration: none;
+            color: #3498db;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>城市数据分析网站导航</h1>
+
+        <div class="category">
+            <h2>官方统计数据</h2>
+            <div class="site-list">
+                <div class="site-item">
+                    <h3><a href="https://data.stats.gov.cn/" target="_blank">国家统计局数据库</a></h3>
+                    <p>提供全面的中国城市统计数据，包括人口、经济、社会发展等多个维度的官方统计数据。</p>
+                </div>
+                <div class="site-item">
+                    <h3><a href="http://tjj.beijing.gov.cn/" target="_blank">北京市统计局</a></h3>
+                    <p>北京市经济社会发展统计数据，包括人口、经济、教育等领域的详细统计信息。</p>
+                </div>
+                <div class="site-item">
+                    <h3><a href="http://tjj.sh.gov.cn/" target="_blank">上海市统计局</a></h3>
+                    <p>上海市各类统计数据，涵盖经济、人口、社会发展等多个领域。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>城市规划数据</h2>
+            <div class="site-list">
+                <div class="site-item">
+                    <h3><a href="https://www.amap.com/" target="_blank">高德地图开放平台</a></h3>
+                    <p>提供POI数据、路网数据、实时交通等城市空间数据服务。</p>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://lbs.baidu.com/" target="_blank">百度地图开放平台</a></h3>
+                    <p>提供地理编码、路径规划、热力图等城市数据分析工具。</p>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a></h3>
+                    <p>开源的全球地图数据平台，提供详细的城市空间数据。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>房地产数据</h2>
+            <div class="site-list">
+                <div class="site-item">
+                    <h3><a href="https://www.anjuke.com/fangjia/" target="_blank">安居客房价数据</a></h3>
+                    <p>提供各城市房价走势、成交价格等房地产市场数据。</p>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://fdc.fang.com/" target="_blank">房天下数据</a></h3>
+                    <p>全国房地产市场数据，包括新房、二手房价格指数等信息。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>环境数据</h2>
+            <div class="site-list">
+                <div class="site-item">
+                    <h3><a href="http://www.cnemc.cn/" target="_blank">中国环境监测总站</a></h3>
+                    <p>提供全国各城市空气质量、水质等环境监测数据。</p>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://www.aqistudy.cn/" target="_blank">AQI数据平台</a></h3>
+                    <p>空气质量指数(AQI)实时查询和历史数据分析。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2>交通出行数据</h2>
+            <div class="site-list">
+                <div class="site-item">
+                    <h3><a href="https://report.amap.com/" target="_blank">高德交通报告</a></h3>
+                    <p>提供城市交通拥堵分析、出行特征等大数据报告。</p>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://huiyan.baidu.com/" target="_blank">百度慧眼</a></h3>
+                    <p>城市人口迁徙、交通流量等大数据分析平台。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
