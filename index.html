@@ -3,154 +3,737 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>城市数据分析网站导航</title>
+    <title>城市数据分析资源导航（充电小匠） | Urban Data Analysis Resources</title>
     <style>
-        body {
-            font-family: 'Microsoft YaHei', sans-serif;
-            line-height: 1.6;
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f5f5f5;
+            --card-color: #ffffff;
+            --text-color: #333333;
+            --hover-color: #e8f4fc;
+        }
+
+        * {
             margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
         .container {
-            max-width: 1200px;
+            max-width: 2000px;
             margin: 0 auto;
-            background-color: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        h1 {
-            color: #333;
+
+        header {
             text-align: center;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #eee;
+            padding: 40px 0;
+            background-color: var(--primary-color);
+            color: white;
+            margin-bottom: 30px;
         }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
         .category {
-            margin: 20px 0;
-            padding: 15px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
+            background-color: var(--card-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        h2 {
-            color: #2c3e50;
-            margin-bottom: 15px;
+
+        .category h2 {
+            color: var(--primary-color);
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--background-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
         }
-        .site-list {
+
+        .category h2 i {
+            margin-right: 10px;
+            font-size: 24px;
+        }
+
+        .site-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 15px;
+            gap: 20px;
         }
+
         .site-item {
+            background-color: var(--card-color);
+            border: 1px solid #eee;
+            border-radius: 8px;
             padding: 15px;
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            transition: transform 0.2s;
+            transition: all 0.3s ease;
         }
+
         .site-item:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: var(--hover-color);
         }
+
         .site-item h3 {
-            margin: 0 0 10px 0;
-            color: #3498db;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
         }
+
         .site-item p {
-            margin: 0;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .site-item .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .tag {
+            background-color: #e8f4fc;
+            color: var(--secondary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
             color: #666;
             font-size: 14px;
         }
-        a {
-            text-decoration: none;
-            color: #3498db;
+
+        .update-time {
+            text-align: right;
+            color: #666;
+            font-size: 14px;
+            margin-top: 10px;
         }
-        a:hover {
-            text-decoration: underline;
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .site-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>城市数据分析网站导航</h1>
+    <header>
+        <div class="container">
+            <h1>城市数据分析资源导航 | 充电小匠</h1>
+            <p>Urban Data Analysis Resources Navigation | Sun-Yukifan</p>
+        </div>
+    </header>
 
+    <div class="container">
         <div class="category">
-            <h2>官方统计数据</h2>
-            <div class="site-list">
+            <h2><i class="fas fa-chart-line"></i>官方统计数据</h2>
+            <div class="site-grid">
                 <div class="site-item">
                     <h3><a href="https://data.stats.gov.cn/" target="_blank">国家统计局数据库</a></h3>
-                    <p>提供全面的中国城市统计数据，包括人口、经济、社会发展等多个维度的官方统计数据。</p>
+                    <p>中国官方统计数据门户，提供人口、经济、社会等多维度统计数据。</p>
+                    <div class="tags">
+                        <span class="tag">官方数据</span>
+                        <span class="tag">统计年鉴</span>
+                        <span class="tag">免费</span>
+                    </div>
                 </div>
                 <div class="site-item">
-                    <h3><a href="http://tjj.beijing.gov.cn/" target="_blank">北京市统计局</a></h3>
-                    <p>北京市经济社会发展统计数据，包括人口、经济、教育等领域的详细统计信息。</p>
+                    <h3><a href="https://www.ndrc.gov.cn/" target="_blank">国家发展改革委</a></h3>
+                    <p>发展规划、经济政策、城市建设等相关数据与政策文件。</p>
+                    <div class="tags">
+                        <span class="tag">政策数据</span>
+                        <span class="tag">规划文件</span>
+                    </div>
                 </div>
                 <div class="site-item">
-                    <h3><a href="http://tjj.sh.gov.cn/" target="_blank">上海市统计局</a></h3>
-                    <p>上海市各类统计数据，涵盖经济、人口、社会发展等多个领域。</p>
+                    <h3><a href="http://www.mohurd.gov.cn/" target="_blank">住房和城乡建设部</a></h3>
+                    <p>住房建设、城市规划、建筑市场等领域的数据与政策。</p>
+                    <div class="tags">
+                        <span class="tag">建设数据</span>
+                        <span class="tag">规划政策</span>
+                    </div>
+                </div>
+				 <div class="site-item">
+                    <h3><a href="http://www.mohurd.gov.cn/" target="_blank">自然资源部</a></h3>
+                    <p>自然资源等领域的数据与政策。</p>
+                    <div class="tags">
+                        <span class="tag">土地规划政策文件</span>
+                        <span class="tag">动态政策文件更新</span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="category">
-            <h2>城市规划数据</h2>
-            <div class="site-list">
+            <h2><i class="fas fa-map-marked-alt"></i>城市空间数据</h2>
+            <div class="site-grid">
                 <div class="site-item">
-                    <h3><a href="https://www.amap.com/" target="_blank">高德地图开放平台</a></h3>
+                    <h3><a href="https://lbs.amap.com/" target="_blank">高德开放平台</a></h3>
                     <p>提供POI数据、路网数据、实时交通等城市空间数据服务。</p>
+                    <div class="tags">
+                        <span class="tag">地理信息</span>
+                        <span class="tag">API接口</span>
+                    </div>
                 </div>
                 <div class="site-item">
-                    <h3><a href="https://lbs.baidu.com/" target="_blank">百度地图开放平台</a></h3>
-                    <p>提供地理编码、路径规划、热力图等城市数据分析工具。</p>
+                    <h3><a href="https://lbsyun.baidu.com/" target="_blank">百度地图开放平台</a></h3>
+                    <p>城市地理编码、路径规划、人流热力图等数据服务。</p>
+                    <div class="tags">
+                        <span class="tag">位置服务</span>
+                        <span class="tag">空间分析</span>
+                    </div>
                 </div>
                 <div class="site-item">
                     <h3><a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a></h3>
-                    <p>开源的全球地图数据平台，提供详细的城市空间数据。</p>
+                    <p>开源的全球地理数据平台，提供详细的城市空间数据。</p>
+                    <div class="tags">
+                        <span class="tag">开源数据</span>
+                        <span class="tag">全球覆盖</span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="category">
-            <h2>房地产数据</h2>
-            <div class="site-list">
+            <h2><i class="fas fa-city"></i>城市规划相关数据</h2>
+			<div class="category">
+            <h2><i class="fas fa-dollar-sign"></i>经济数据</h2>
+            <div class="site-grid">
+                <div class="site-item">
+                    <h3><a href="https://www.citygdp.com" target="_blank">城市GDP排名</a></h3>
+                    <p>全球城市GDP数据库，提供城市经济实力排名和分析。</p>
+                    <div class="tags">
+                        <span class="tag">GDP数据</span>
+                        <span class="tag">城市排名</span>
+                        <span class="tag">经济指标</span>
+                    </div>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://simplemaps.com/data/world-cities" target="_blank">世界城市数据库</a></h3>
+                    <p>comprehensive global city database，包含人口、经济等多维度数据。</p>
+                    <div class="tags">
+                        <span class="tag">全球数据</span>
+                        <span class="tag">城市信息</span>
+                        <span class="tag">综合数据</span>
+                    </div>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://www.imf.org/external/datamapper" target="_blank">IMF数据地图</a></h3>
+                    <p>国际货币基金组织提供的全球经济数据可视化平台。</p>
+                    <div class="tags">
+                        <span class="tag">国际经济</span>
+                        <span class="tag">官方数据</span>
+                        <span class="tag">可视化</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2><i class="fas fa-users"></i>人口与迁移数据</h2>
+            <div class="site-grid">
+                <div class="site-item">
+                    <h3><a href="https://population.un.org" target="_blank">联合国人口动态</a></h3>
+                    <p>全球人口统计、预测和人口发展趋势分析。</p>
+                    <div class="tags">
+                        <span class="tag">人口统计</span>
+                        <span class="tag">国际数据</span>
+                        <span class="tag">趋势预测</span>
+                    </div>
+                </div>
+                <div class="site-item">
+                    <h3><a href="http://www.stats.gov.cn/tjsj/pcsj" target="_blank">中国人口普查数据</a></h3>
+                    <p>国家统计局发布的人口普查数据，包含详细的人口结构分析。</p>
+                    <div class="tags">
+                        <span class="tag">人口普查</span>
+                        <span class="tag">官方数据</span>
+                        <span class="tag">中国统计</span>
+                    </div>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://www.worldbank.org/en/topic/urbandevelopment/overview" target="_blank">世界银行城市发展数据</a></h3>
+                    <p>全球城市化进程、人口迁移和城市发展指标。</p>
+                    <div class="tags">
+                        <span class="tag">城市化</span>
+                        <span class="tag">发展指标</span>
+                        <span class="tag">国际数据</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <div class="category">
+			<h2><i class="fas fa-dollar-sign"></i>规划数据</h2>
+            <div class="site-grid">
+			    <div class="site-item">
+                    <h3><a href="http://www.planning.org.cn/" target="_blank">中国城市规划网</a></h3>
+                    <p>城市规划标准、案例、研究资料及相关政策文件。</p>
+                    <div class="tags">
+                        <span class="tag">规划标准</span>
+                        <span class="tag">案例分析</span>
+                    </div>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://www.landchina.com/" target="_blank">中国土地市场网</a></h3>
+                    <p>土地出让、交易等信息，以及土地利用相关数据。</p>
+                    <div class="tags">
+                        <span class="tag">土地数据</span>
+                        <span class="tag">市场交易</span>
+                    </div>
+                </div>
+		 <div class="category">
+            <h2>互联网趋势分析工具</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="http://data.weibo.com/index" target="_blank">微博指数</a></li>
+                <li class="link-item"><a href="http://index.baidu.com/" target="_blank">百度指数</a></li>
+                <li class="link-item"><a href="http://index.so.com/#index" target="_blank">好搜指数</a></li>
+                <li class="link-item"><a href="http://zhishu.sogou.com/" target="_blank">搜狗指数</a></li>
+                <li class="link-item"><a href="http://trends.baidu.com/" target="_blank">百度预测</a></li>
+            </ul>
+        </div>
+
+        <div class="category">
+            <h2>在线调查工具</h2>
+            <ul class="link-list">
+                <li class="link-item"><a href="http://wj.qq.com/" target="_blank">腾讯问卷调查</a></li>
+                <li class="link-item"><a href="http://www.mikecrm.com/" target="_blank">麦客</a></li>
+                <li class="link-item"><a href="http://www.sojump.com/" target="_blank">问卷星</a></li>
+                <li class="link-item"><a href="http://www.wenjuan.com/" target="_blank">问卷网</a></li>
+                <li class="link-item"><a href="https://zh.surveymonkey.com/" target="_blank">SurveyMonkey</a></li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="category">
+            <h2><i class="fas fa-house-user"></i>房地产数据</h2>
+            <div class="site-grid">
+                <div class="site-item">
+                    <h3><a href="https://www.creprice.cn/" target="_blank">中国房价行情网</a></h3>
+                    <p>全国房地产市场价格指数、成交量等数据分析。</p>
+                    <div class="tags">
+                        <span class="tag">房价数据</span>
+                        <span class="tag">市场分析</span>
+                    </div>
+                </div>
                 <div class="site-item">
                     <h3><a href="https://www.anjuke.com/fangjia/" target="_blank">安居客房价数据</a></h3>
-                    <p>提供各城市房价走势、成交价格等房地产市场数据。</p>
-                </div>
-                <div class="site-item">
-                    <h3><a href="https://fdc.fang.com/" target="_blank">房天下数据</a></h3>
-                    <p>全国房地产市场数据，包括新房、二手房价格指数等信息。</p>
+                    <p>各城市房价走势、成交价格等房地产市场数据。</p>
+                    <div class="tags">
+                        <span class="tag">房价走势</span>
+                        <span class="tag">市场行情</span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="category">
-            <h2>环境数据</h2>
-            <div class="site-list">
+            <h2><i class="fas fa-leaf"></i>环境数据</h2>
+            <div class="site-grid">
                 <div class="site-item">
                     <h3><a href="http://www.cnemc.cn/" target="_blank">中国环境监测总站</a></h3>
-                    <p>提供全国各城市空气质量、水质等环境监测数据。</p>
+                    <p>全国空气质量、水质等环境监测数据。</p>
+                    <div class="tags">
+                        <span class="tag">环境监测</span>
+                        <span class="tag">官方数据</span>
+                    </div>
                 </div>
                 <div class="site-item">
-                    <h3><a href="https://www.aqistudy.cn/" target="_blank">AQI数据平台</a></h3>
-                    <p>空气质量指数(AQI)实时查询和历史数据分析。</p>
+                    <h3><a href="https://www.aqistudy.cn/" target="_blank">空气质量数据平台</a></h3>
+                    <p>城市AQI指数实时查询和历史数据分析。</p>
+                    <div class="tags">
+                        <span class="tag">空气质量</span>
+                        <span class="tag">实时数据</span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="category">
-            <h2>交通出行数据</h2>
-            <div class="site-list">
+            <h2><i class="fas fa-bus"></i>交通出行数据</h2>
+             <div class="category">
+            <h2><i class="fas fa-bus"></i>公共交通数据</h2>
+            <div class="site-grid">
+                <div class="site-item">
+                    <h3><a href="https://transitfeeds.com" target="_blank">TransitFeeds</a></h3>
+                    <p>全球公共交通数据开放平台，提供GTFS格式的实时交通数据。</p>
+                    <div class="tags">
+                        <span class="tag">公交数据</span>
+                        <span class="tag">实时信息</span>
+                        <span class="tag">GTFS</span>
+                    </div>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://database.mobilitydata.org" target="_blank">GTFS Data Exchange</a></h3>
+                    <p>标准化的公共交通数据交换平台，支持多城市交通数据获取。</p>
+                    <div class="tags">
+                        <span class="tag">数据标准</span>
+                        <span class="tag">交通数据</span>
+                        <span class="tag">开放平台</span>
+                    </div>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://www.transitwand.com/" target="_blank">Transit Wand</a></h3>
+                    <p>公共交通路线规划和分析工具，支持多种交通方式整合。</p>
+                    <div class="tags">
+                        <span class="tag">路线规划</span>
+                        <span class="tag">分析工具</span>
+                        <span class="tag">交通整合</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2><i class="fas fa-map-marked-alt"></i>地图服务API</h2>
+            <div class="site-grid">
+                <div class="site-item">
+                    <h3><a href="https://lbs.amap.com" target="_blank">高德地图开放平台</a></h3>
+                    <p>提供地理编码、路径规划、实时路况等全方位位置服务。</p>
+                    <div class="tags">
+                        <span class="tag">位置服务</span>
+                        <span class="tag">实时数据</span>
+                        <span class="tag">API接口</span>
+                    </div>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://lbsyun.baidu.com" target="_blank">百度地图开放平台</a></h3>
+                    <p>全面的地图服务API，包括路况、导航、地点检索等功能。</p>
+                    <div class="tags">
+                        <span class="tag">地图服务</span>
+                        <span class="tag">LBS</span>
+                        <span class="tag">开发接口</span>
+                    </div>
+				</div>
+				<div class="site-item">
+                    <h3><a href="https://www.tianditu.gov.cn/" target="_blank">天地图</a></h3>
+                    <p>国家地理信息公共服务平台</p>
+                    <div class="tags">
+                        <span class="tag">信息服务</span>
+                        <span class="tag">公共服务平台</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2><i class="fas fa-car-side"></i>共享出行数据</h2>
+            <div class="site-grid">
+                <div class="site-item">
+                    <h3><a href="https://movement.uber.com" target="_blank">Uber Movement</a></h3>
+                    <p>优步提供的城市交通出行大数据平台，包含行程时间和模式分析。</p>
+                    <div class="tags">
+                        <span class="tag">出行数据</span>
+                        <span class="tag">城市分析</span>
+                        <span class="tag">大数据</span>
+                    </div>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://gaia.didichuxing.com" target="_blank">滴滴盖亚开放平台</a></h3>
+                    <p>滴滴出行提供的城市交通研究数据集和分析工具。</p>
+                    <div class="tags">
+                        <span class="tag">交通数据</span>
+                        <span class="tag">研究资源</span>
+                        <span class="tag">开放数据</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="category">
+            <h2><i class="fas fa-traffic-light"></i>交通指数与分析</h2>
+            <div class="site-grid">
+                <div class="site-item">
+                    <h3><a href="https://www.tomtom.com/traffic-index" target="_blank">TomTom交通指数</a></h3>
+                    <p>全球城市交通拥堵指数排名和趋势分析。</p>
+                    <div class="tags">
+                        <span class="tag">拥堵指数</span>
+                        <span class="tag">全球排名</span>
+                        <span class="tag">趋势分析</span>
+                    </div>
+                </div>
                 <div class="site-item">
                     <h3><a href="https://report.amap.com/" target="_blank">高德交通报告</a></h3>
-                    <p>提供城市交通拥堵分析、出行特征等大数据报告。</p>
+                    <p>中国城市交通分析报告，包含拥堵指数和出行特征。</p>
+                    <div class="tags">
+                        <span class="tag">交通报告</span>
+                        <span class="tag">城市分析</span>
+                        <span class="tag">中国数据</span>
+                    </div>
                 </div>
                 <div class="site-item">
                     <h3><a href="https://huiyan.baidu.com/" target="_blank">百度慧眼</a></h3>
-                    <p>城市人口迁徙、交通流量等大数据分析平台。</p>
+                    <p>基于百度地图的城市交通与人口流动分析平台。</p>
+                    <div class="tags">
+                        <span class="tag">人流分析</span>
+                        <span class="tag">交通态势</span>
+                        <span class="tag">实时监测</span>
+                    </div>
                 </div>
             </div>
         </div>
+   <div class="category">
+            <h2><i class="fas fa-book"></i>学术与研究平台数据</h2>
+			 <div class="category">
+            <h2><i class="fas fa-chart-bar"></i>数据可视化工具</h2>
+            <div class="site-grid">
+                <div class="site-item">
+                    <h3><a href="https://public.tableau.com" target="_blank">Tableau Public</a></h3>
+                    <p>免费的数据可视化工具，可创建交互式仪表板和数据故事。</p>
+                    <div class="tags">
+                        <span class="tag">可视化</span>
+                        <span class="tag">免费版本</span>
+                        <span class="tag">交互式</span>
+                    </div>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://kepler.gl" target="_blank">Kepler.gl</a></h3>
+                    <p>强大的地理空间数据可视化工具，支持大规模数据分析。</p>
+                    <div class="tags">
+                        <span class="tag">地理可视化</span>
+                        <span class="tag">开源</span>
+                        <span class="tag">Web端</span>
+                    </div>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://powerbi.microsoft.com" target="_blank">Power BI</a></h3>
+                    <p>微软出品的商业智能和数据可视化工具，支持多种数据源。</p>
+                    <div class="tags">
+                        <span class="tag">商业智能</span>
+                        <span class="tag">实时分析</span>
+                        <span class="tag">企业级</span>
+                    </div>
+				</div>
+                <div class="site-item">
+                    <h3><a href="http://echarts.baidu.com/" target="_blank">百度ECharts</a></h3>
+                    <p>功能丰富的开源数据可视化库，支持多种图表类型和个性化定制。</p>
+                    <div class="tags">
+                        <span class="tag">开源</span>
+                        <span class="tag">图表库</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://antv.alipay.com/index.html" target="_blank">AntV</a></h3>
+                    <p>蚂蚁金服出品的数据可视化解决方案，包含多个子产品。</p>
+                    <div class="tags">
+                        <span class="tag">企业级</span>
+                        <span class="tag">可视化</span>
+                        <span class="tag">图表库</span>
+                    </div>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://www.wentu.io" target="_blank">文图</a></h3>
+                    <p>专业的在线数据可视化工具，支持多种图表类型和在线编辑。</p>
+                    <div class="tags">
+                        <span class="tag">在线工具</span>
+                        <span class="tag">可视化</span>
+                        <span class="tag">简单易用</span>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2><i class="fas fa-globe"></i>GIS工具</h2>
+            <div class="site-grid">
+                <div class="site-item">
+                    <h3><a href="https://qgis.org" target="_blank">QGIS</a></h3>
+                    <p>功能强大的开源地理信息系统软件，支持多种空间数据格式。</p>
+                    <div class="tags">
+                        <span class="tag">开源</span>
+                        <span class="tag">GIS</span>
+                        <span class="tag">跨平台</span>
+                    </div>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://livingatlas.arcgis.com" target="_blank">ArcGIS Living Atlas</a></h3>
+                    <p>ESRI提供的全球地理信息数据库，包含丰富的地理数据资源。</p>
+                    <div class="tags">
+                        <span class="tag">地理数据</span>
+                        <span class="tag">专业GIS</span>
+                        <span class="tag">在线平台</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category">
+            <h2><i class="fas fa-code"></i>开发工具与库</h2>
+            <div class="site-grid">
+                <div class="site-item">
+                    <h3><a href="https://geopandas.org" target="_blank">GeoPandas</a></h3>
+                    <p>Python地理空间数据处理库，扩展了pandas的功能。</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">地理数据</span>
+                        <span class="tag">开源库</span>
+                    </div>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://udst.github.io/urbansim" target="_blank">UrbanSim</a></h3>
+                    <p>城市系统模拟工具包，用于城市发展情景分析。</p>
+                    <div class="tags">
+                        <span class="tag">城市模拟</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">规划工具</span>
+                    </div>
+                </div>
+                <div class="site-item">
+                    <h3><a href="https://pypi.org/project/folium/" target="_blank">Folium</a></h3>
+                    <p>Python库，用于创建交互式地图可视化。</p>
+                    <div class="tags">
+                        <span class="tag">地图可视化</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">交互式</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+			<h2><i class="fas fa-code"></i>学习平台</h2>
+			<div class="site-book">
+                <div class="site-item">
+                    <h3><a href="https://www.beijingcitylab.com/" target="_blank">BCL北京城市实验室</a></h3>
+                    <p>城市人口迁徙、交通流量等大数据分析平台。</p>
+                    <div class="tags">
+                        <span class="tag">前言课程、理论、数据</span>
+                        <span class="tag">大数据分析</span>
+                    </div>
+                </div>
+				<div class="site-item">
+                    <h3><a href="https://senseable.mit.edu/" target="_blank">MIT Senseable City Lab</a></h3>
+                    <p>城市数据报告。</p>
+                    <div class="tags">
+                        <span class="tag">城市数据</span>
+                        <span class="tag">学术研究</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="update-time">
+            最后更新时间：2025年2月
+        </div>
     </div>
+	<div class="category">
+    <h2><i class="fas fa-microscope"></i>科学研究工具</h2>
+    <div class="site-grid">
+        <!-- 水文与土壤工具 -->
+        <div class="site-item">
+            <h3><a href="https://swat.tamu.edu/" target="_blank">SWAT</a></h3>
+            <p>德克萨斯A&M大学开发的水文和土壤评估工具，用于预测土地管理对水、沉积物和农业化学品产生的影响。</p>
+            <div class="tags">
+                <span class="tag">水文</span>
+                <span class="tag">土壤评估</span>
+                <span class="tag">环境模拟</span>
+            </div>
+        </div>
+
+        <!-- 地球化学工具 -->
+        <div class="site-item">
+            <h3><a href="https://github.com/GeoPyTool" target="_blank">GeoPyTool</a></h3>
+            <p>开源的地球化学数据处理和可视化工具，支持多种地球化学图解。</p>
+            <div class="tags">
+                <span class="tag">地球化学</span>
+                <span class="tag">Python</span>
+                <span class="tag">开源</span>
+            </div>
+        </div>
+
+        <!-- 同位素分析工具 -->
+        <div class="site-item">
+            <h3><a href="http://isoplotr.london-geochron.com" target="_blank">IsoplotR</a></h3>
+            <p>专业的同位素数据在线处理平台，支持多种同位素定年方法。</p>
+            <div class="tags">
+                <span class="tag">同位素</span>
+                <span class="tag">年代学</span>
+                <span class="tag">在线工具</span>
+            </div>
+        </div>
+
+        <!-- 遥感工具 -->
+        <div class="site-item">
+            <h3><a href="https://sentinel.esa.int/web/sentinel/toolboxes/sentinel-1" target="_blank">Sentinel Toolbox</a></h3>
+            <p>欧空局开发的哨兵卫星数据处理工具箱，支持多种遥感数据处理。</p>
+            <div class="tags">
+                <span class="tag">遥感</span>
+                <span class="tag">卫星数据</span>
+                <span class="tag">图像处理</span>
+            </div>
+        </div>
+
+        <!-- 统计分析工具 -->
+        <div class="site-item">
+            <h3><a href="https://www.jamovi.org/" target="_blank">jamovi</a></h3>
+            <p>免费开源的统计分析软件，提供友好的图形界面和丰富的统计功能。</p>
+            <div class="tags">
+                <span class="tag">统计分析</span>
+                <span class="tag">数据可视化</span>
+                <span class="tag">开源</span>
+            </div>
+        </div>
+
+        <!-- 文献分析工具 -->
+        <div class="site-item">
+            <h3><a href="https://www.connectedpapers.com/" target="_blank">Connected Papers</a></h3>
+            <p>可视化学术文献关系网络的工具，帮助研究者发现相关文献。</p>
+            <div class="tags">
+                <span class="tag">文献分析</span>
+                <span class="tag">可视化</span>
+                <span class="tag">研究工具</span>
+            </div>
+        </div>
+
+        <!-- 地图数据资源 -->
+        <div class="site-item">
+            <h3><a href="https://mc.bbbike.org/mc/" target="_blank">BBBike Map</a></h3>
+            <p>提供高精度DEM数据和地图资源，支持多种地图格式下载。</p>
+            <div class="tags">
+                <span class="tag">DEM数据</span>
+                <span class="tag">地图资源</span>
+                <span class="tag">遥感数据</span>
+            </div>
+        </div>
+		
+    </div>
+</div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025城市数据分析资源导航 | 本站内容仅供参考，请以各网站最新数据为准</p>
+            <p>联系方式：<a href="mailto:490557802@qq.com">490557802@qq.com</a></p>
+        </div>
+    </footer>
 </body>
-</html> 
+</html>
